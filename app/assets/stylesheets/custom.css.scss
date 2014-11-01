@@ -1,0 +1,119 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+html,body 
+{
+  height:100%;
+}
+
+h1 
+{
+  font-family: Arial,sans-serif;
+  font-size: 48px;
+  color: #748BA7;
+}
+
+.container-full 
+{
+  margin: 0 auto;
+  width: 100%;
+  min-height:100%;
+  background-color:#2B4A6F;
+  color:#eee;
+  
+}
+
+.input-group
+{
+	width:110%;
+	text-align:center;
+	margin:0 auto;
+}
+
+.container-full a 
+{
+  color:#efefef;
+  text-decoration:none;
+}
+
+.v-center 
+{
+  margin-top:7%;
+}
+
+#titleBar
+{
+	border-radius: 5px;
+	background-color:#051C38;	
+}
+
+.twoBoxes
+{
+	border: solid #748BA7 3px;
+	margin-top: 70px;
+	height: 350px;
+	background-color:#748BA7;
+	border-radius: 5px;
+	opacity:0.7;	
+}
+
+#jumbo
+{
+	margin-top:10px;
+	height:500px;
+	background: url('../CTImages/ticketBackground.jpg') no-repeat scroll left center;
+	display:block;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+
+.userForms
+{
+	margin-left:-20px;
+	margin-top: 10px;
+}
+
+.okButton
+{
+	padding-right:50px;
+	padding-left:50px;
+	margin-left:70px;
+	display:inline-block;
+	
+}
+
+.triple
+{
+	height:100px;
+	color: #748BA7;
+}
+
+#signUp
+{
+	background-color:#748BA7;
+	border: solid black 0px;
+	margin-top:25px;
+	color:#051C38;
+}
+
+#signUpHead
+{
+	background-color:#051C38;
+	border: solid black 0px;
+	border-radius: 5px;
+	color:#748BA7;
+}
+
+#form2
+{
+	margin-top: 10px;
+}
+#okButton2
+{
+	margin-top: 55px;
+}
