@@ -1,5 +1,5 @@
 <% provide(:title, "Home") %>
-
+<% provide(:title, @user.name) %>
 
 			
 			<div class="row" >
@@ -360,8 +360,9 @@
 					-->
 				<div class="col-lg-2">
 					<div id = "userInfo">
-						<p>Example Person</p>
-						<p>example@person.com</p>
+						<!-- <p>Example Person</p> 
+						<p>example@person.com</p> -->
+						<%= @user.name %>
 						<img src = "CTImages/outline.jpg" height = "100" width = "100" />
 					</div>
 					
