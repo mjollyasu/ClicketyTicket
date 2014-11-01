@@ -1,2 +1,124 @@
-<h1>StaticPages#landing</h1>
-<p>Find me in app/views/static_pages/landing.html.erb</p>
+<% provide(:title, "Landing") %>
+	
+	<!-- Page head -->
+		<div class="container-full" >
+			<div class="row" > 
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-8" id="titleBar">
+					<div class="col-lg-8">
+						<h1>Clickety Ticket</h1>
+					</div>
+					<div class="col-lg-3">
+					</div>
+					<div class="col-lg-1">	
+						<img src = "CTImages/logo1.png" height = "75" width = "86" />
+					</div>
+				</div>		
+				<div class="col-lg-2">
+				</div>
+			</div>
+			
+			<!-- end page head -->
+
+			<div class="row" id = "jumbo">
+				
+				<div class="col-lg-2">
+				</div>
+				
+				<div class="col-lg-3 twoBoxes" >
+					<div class="panel panel-default" id = "signUp">
+						<div class="panel-heading" id = "signUpHead"><h3>Get Started!</h3></div>
+						<div class="panel-body">
+							<form class="col-lg-12 userForms">
+								<div class="input-group" >
+									<input class="form-control input-lg" title="Email" placeholder="Enter your email address" type="text">				
+								</div>
+							</form>	
+							<br>
+							<form class="col-lg-12 userForms" id = "form2">
+								<div class="input-group">
+									<input class="form-control input-lg" title="Password" placeholder="Enter your password" type="text">
+									
+								</div>
+							</form>
+							<form class="col-lg-12 userForms">
+								<div class="input-group">
+									<input class="form-control input-lg" title="Confirm Password" placeholder="Confirm your password" type="text">									
+								</div>
+							</form>
+						</div>					
+						<span class="input-group-btn okButton"><button class="btn btn-lg btn-primary okButton" type="button">OK</button></span>
+					</div>
+				</div>
+
+				<div class="col-lg-2">
+				</div>
+				
+				<div class="col-lg-3 twoBoxes">
+					<div class="panel panel-default" id = "signUp">
+						<div class="panel-heading" id = "signUpHead"><h3>Welcome Back!</h3></div>
+						<div class="panel-body">
+							<form class="col-lg-12 userForms">
+								<div class="input-group">
+									<input class="form-control input-lg" title="Email" placeholder="Enter your email address" type="text">
+								</div>
+							</form>	
+							<br>
+							<form class="col-lg-12 userForms" id = "form2">
+								<div class="input-group">
+									<input class="form-control input-lg" title="Password" placeholder="Enter your password" type="text">									
+								</div>
+							</form>	
+						</div>					
+						<span class="input-group-btn okButton"><button class="btn btn-lg btn-primary okButton" id = "okButton2" type="button">OK</button></span>
+					</div>
+				</div>
+				<div class="col-lg-2">
+				</div>
+				
+			</div>
+		  
+
+
+		</div> 
+
+		<div class="container">		  
+			<hr>		  
+			<div class="row" >
+				<div class="col-md-4">
+				  <div class="panel panel-default">
+					<div class="panel-heading"><h3>Find Your Tickets</h3></div>
+					<div class="panel-body triple">With our powerful search engine and thousands of listings, you're sure to find 
+					the tickets you want when you want them.
+					</div>
+				  </div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default" >
+					<div class="panel-heading" ><h3>Connect With Your Audience</h3></div>
+					<div class="panel-body triple">Post your event, and our community of millions of fans will come to you.
+					</div>
+				  </div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+					<div class="panel-heading"><h3>Explore And Discover</h3></div>
+					<div class="panel-body triple">Our nationwide network of fans and event promoters make it easy to find the next big thing.
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+			<!-- Page foot -->
+		  
+			<div class="row">
+				<br><br>
+				<div class="col-lg-12">					
+					<p class="pull-right">Created by Matt Jolly, Morgan MacDonald, and Shaun Brown</p>
+				</div>
+			</div>
+		</div>		
+		<!-- end page foot -->
+			
+

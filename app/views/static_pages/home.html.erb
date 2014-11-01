@@ -1,2 +1,441 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "Home") %>
+	<body>
+		<div class="container-full" >
+			
+			<!-- Title bar with logo -->
+			
+			<div class="row" > 
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-8" id="titleBar">
+					<div class="col-lg-8">
+						<h1>Clickety Ticket</h1>
+					</div>
+					<div class="col-lg-3">
+					</div>
+					<div class="col-lg-1">	
+						<img src = "CTImages/logo1.png" height = "75" width = "86" />
+					</div>
+				</div>		
+				<div class="col-lg-2">
+				</div>
+			</div>
+
+			
+			<!--Sheet tabs -->
+			
+			<div class="row" >
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-8 tabLinks">
+					<div class="col-md-4 tabSpace active">
+						<div class = "sheetTabs"><a href="#home">Home</a></div>
+					</div>
+					<div class="col-md-4 tabSpace">
+						<div class = "sheetTabs"><a href="#settings">Settings</a></div>
+					</div>
+					
+					<div class="col-md-4 tabSpace">
+						<div class = "sheetTabs"><a href="#logout">Log out</a></div>
+					</div>
+				</div>
+				<div class="col-lg-2">
+				</div>
+			</div>
+				 
+			<!-- Main content panel. Contains all content for the sheet tabs-->			
+			<div class="row" id = "jumbo">
+				<div class="col-lg-2">
+				</div>
+				
+				<div class="col-lg-8 mainPanel">
+					<div class = "mainContent" id = "home">
+						<div class = "row">
+							<div class = "col-md-3 homeDivs" id = "upcoming">
+								
+								<!-- Upcoming events pane on the home tab. Contains thumbnails for each
+								upcoming event. This portion needs to interface with the database to pull
+								relevant info 
+								************************************************
+								************************************************
+								-->
+								<div id="upcomingPane">
+									<h3>Upcoming Events:</h3>
+									
+									<div class = "eventThumb">
+										<a href = "#event1"><img src = "CTImages/ticketThumb.jpg" ></a>
+									</div>
+									
+									<br>
+									
+									<div class = "eventThumb">
+										<a href = "#event2"><img src = "CTImages/ticketThumb.jpg" ></a>
+									</div>
+									
+									<br>
+									
+									<div class = "eventThumb">
+										<a href = "#event3"><img src = "CTImages/ticketThumb.jpg" ></a>
+									</div>
+
+									<br>
+									
+									<div class = "eventThumb">
+										<a href = "#event4"><img src = "CTImages/ticketThumb.jpg" ></a>
+									</div>
+									
+									<br>
+									
+									<div class = "eventThumb">
+										<a href = "#event5"><img src = "CTImages/ticketThumb.jpg" ></a>
+									</div>
+									
+									<br>
+									
+									<div class = "eventThumb">
+										<a href = "#event6"><img src = "CTImages/ticketThumb.jpg" ></a>
+									</div>
+
+									<br>
+								</div>
+								
+								<!-- The booking pane. Displayed only after the "Book it" button
+								has been clicked. Allows user to type in the number of tickets to 
+								purchase-->
+								<div id= "bookingPane">
+									
+									<!-- Ticket number form. Needs to send information to back-end
+									and verify with database 
+									**************************************************************
+									************************************************************
+									*************************************************************
+									-->
+									<form>
+										Please enter the number of tickets:
+										<input type="text" name="numberOfTickets"><br>
+									<form>
+									<br>
+									<br>
+									
+									<!-- Page control buttons. Place order and cancel -->
+									<div class = "bookingButtons" id="orderButton"><p><b>Place Order</b></p></div>
+									<div class = "bookingButtons" id ="goBack"><p><b>Cancel</b></p></div>
+								</div>
+							</div>
+							
+							<!-- Event detail pane. Displays details for an event after its thumbnail has been clicked.
+							Needs to pull information from the database to populate data. Each event's details 
+							must be placed into a separate div in the same format as in the examples below.
+							********************************************************************************
+							********************************************************************************
+							********************************************************************************
+							-->
+							<div class = "col-md-9 homeDivs" id = "selectedEvent">
+								<h3>Event Details:</h3>
+								
+								<div class = "eventDetail" id = "event0">
+									<h4>Please select an event</h4>
+								</div>
+								
+								<div class = "eventDetail" id = "event1">
+									<h4>Event 1</h4>
+									<br>
+									<table>
+										<tr>
+											<td> Title </td>
+											<td> Event 1 </td>
+										</tr>
+										<tr>
+											<td> Type </td>
+											<td> Music </td>
+										</tr>
+										<tr>
+											<td> Venue </td>
+											<td> Downtown </td>
+										</tr>
+										<tr>
+											<td> Date/Time </td>
+											<td> 10/31/2014 - 6pm </td>
+										</tr>
+										<tr>
+											<td> Total Tickets </td>
+											<td> 500 </td>
+										</tr>
+										<tr>
+											<td> Available Tickets </td>
+											<td> 357 </td>
+										</tr>
+									</table>
+								</div>
+								
+								<div class = "eventDetail" id = "event2">
+									<h4>Event 2</h4>
+									<br>
+									<table>
+										<tr>
+											<td> Title </td>
+											<td> Event 2 </td>
+										</tr>
+										<tr>
+											<td> Type </td>
+											<td> Music </td>
+										</tr>
+										<tr>
+											<td> Venue </td>
+											<td> Downtown </td>
+										</tr>
+										<tr>
+											<td> Date/Time </td>
+											<td> 10/31/2014 - 6pm </td>
+										</tr>
+										<tr>
+											<td> Total Tickets </td>
+											<td> 500 </td>
+										</tr>
+										<tr>
+											<td> Available Tickets </td>
+											<td> 357 </td>
+										</tr>
+									</table>
+								</div>
+								
+								<div class = "eventDetail" id = "event3">
+									<h4>Event 3</h4>
+									<br>
+									<table>
+										<tr>
+											<td> Title </td>
+											<td> Event 3 </td>
+										</tr>
+										<tr>
+											<td> Type </td>
+											<td> Music </td>
+										</tr>
+										<tr>
+											<td> Venue </td>
+											<td> Downtown </td>
+										</tr>
+										<tr>
+											<td> Date/Time </td>
+											<td> 10/31/2014 - 6pm </td>
+										</tr>
+										<tr>
+											<td> Total Tickets </td>
+											<td> 500 </td>
+										</tr>
+										<tr>
+											<td> Available Tickets </td>
+											<td> 357 </td>
+										</tr>
+									</table>
+								</div>
+								
+								<div class = "eventDetail" id = "event4">
+									<h4>Event 4</h4>
+									<br>
+									<table>
+										<tr>
+											<td> Title </td>
+											<td> Event 4 </td>
+										</tr>
+										<tr>
+											<td> Type </td>
+											<td> Music </td>
+										</tr>
+										<tr>
+											<td> Venue </td>
+											<td> Downtown </td>
+										</tr>
+										<tr>
+											<td> Date/Time </td>
+											<td> 10/31/2014 - 6pm </td>
+										</tr>
+										<tr>
+											<td> Total Tickets </td>
+											<td> 500 </td>
+										</tr>
+										<tr>
+											<td> Available Tickets </td>
+											<td> 357 </td>
+										</tr>
+									</table>
+								</div>
+								
+								<div class = "eventDetail" id = "event5">
+									<h4>Event 5</h4>
+									<br>
+									<table>
+										<tr>
+											<td> Title </td>
+											<td> Event 5 </td>
+										</tr>
+										<tr>
+											<td> Type </td>
+											<td> Music </td>
+										</tr>
+										<tr>
+											<td> Venue </td>
+											<td> Downtown </td>
+										</tr>
+										<tr>
+											<td> Date/Time </td>
+											<td> 10/31/2014 - 6pm </td>
+										</tr>
+										<tr>
+											<td> Total Tickets </td>
+											<td> 500 </td>
+										</tr>
+										<tr>
+											<td> Available Tickets </td>
+											<td> 357 </td>
+										</tr>
+									</table>
+								</div>
+								
+								<div class = "eventDetail" id = "event6">
+									<h4>Event 6</h4>
+									<br>
+									<table>
+										<tr>
+											<td> Title </td>
+											<td> Event 6 </td>
+										</tr>
+										<tr>
+											<td> Type </td>
+											<td> Music </td>
+										</tr>
+										<tr>
+											<td> Venue </td>
+											<td> Downtown </td>
+										</tr>
+										<tr>
+											<td> Date/Time </td>
+											<td> 10/31/2014 - 6pm </td>
+										</tr>
+										<tr>
+											<td> Total Tickets </td>
+											<td> 500 </td>
+										</tr>
+										<tr>
+											<td> Available Tickets </td>
+											<td> 357 </td>
+										</tr>
+									</table>
+								</div>
+								
+								<!-- "Book it" button. Displays the booking pane for the 
+								currently selected event. -->
+								<div id = "bookItBtn">									
+									<a>Book it!</a>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+						<!-- Order completion pane. Displays a confirmation / error message
+						with a link back to the home screen. -->
+						<div class = "mainContent" id = "orderComplete">
+							<p id = "completeMessage">Your order has been placed!</p>
+							<p id = "errorMessage">There has been an error!</p>
+							<div id ="goHome"><p><b>Return to Home</b></p></div>
+						</div>
+						
+					<!-- The settings pane. Needs to include an option to allow the user to upload
+					their profile photo to the database. 
+					********************************************************************************
+					********************************************************************************
+					********************************************************************************
+					-->					
+					<div class = "mainContent" id = "settings">
+							<div class = "col-md-11 homeDivs">
+								<p>Please upload profile picture:</p>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<br> <br>
+								<div id = "uploadButton"><p>Upload</p></div>
+							</div>
+					</div>
+					
+					<!--The logout pane. Allows the user to confirm their intention to log out. -->
+					<div class = "mainContent" id = "logout">
+						<div class = "col-md-11 homeDivs">
+								<p>Are you sure you would like to log out?</p>								
+								<div class = "logButtons" id = "logoutButton"><p>Log out</p></div>								
+							</div>
+					</div>					
+				</div>
+				
+				<!-- User profile pane. Displays the username, email, and profile picture, if loaded.
+					Needs to interface with the database to obtain the info here. 
+					********************************************************************************
+					********************************************************************************
+					********************************************************************************
+					-->
+				<div class="col-lg-2">
+					<div id = "userInfo">
+						<p>Example Person</p>
+						<p>example@person.com</p>
+						<img src = "CTImages/outline.jpg" height = "100" width = "100" />
+					</div>
+					
+					<!-- Toggle switch to display the user's history -->
+					<div id = "showHist">
+						<br>
+						<div id = "histButton">						
+							<div>
+								<input type="checkbox" id="toggleHist" name="toggleHist" class="switch" />
+								<label for="toggleHist">Show event history?</label>
+							</div>
+						</div>
+					</div>
+					
+					<!-- User history pane. Needs to interface with the database to 
+					populate. 
+					********************************************************************************
+					********************************************************************************
+					********************************************************************************
+					-->
+					<div id = "userHist">
+						<table>
+							<tr>
+								<td><b>Event Name</b></td>
+								<td><b>Date</b></td>
+							</tr>
+							<tr>
+								<td>Event 1</td>
+								<td>10/31/2014</td>
+							</tr>
+							<tr>
+								<td>Event 2</td>
+								<td>10/31/2014</td>
+							</tr>
+							<tr>
+								<td>Event 3</td>
+								<td>10/31/2014</td>
+							</tr>
+						</table>
+					</div>					
+				</div>				
+			</div>
+		</div> 
+
+		
+		<!-- Page footer -->
+		<div class="container">		  
+			<hr>		  
+			<div class="row">
+				<br><br>
+				<div class="col-lg-12">					
+					<p class="pull-right">Designed by Matt Jolly, Morgan MacDonald, and Shaun Brown</p>
+				</div>
+			</div>
+		</div>				  
