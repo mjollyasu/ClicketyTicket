@@ -117,3 +117,374 @@ h1
 {
 	margin-top: 55px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Style sheet for main homepage - user logged in */
+
+
+
+
+#titleBar
+{
+	border-radius: 5px;
+	background-color:#051C38;	
+}
+
+
+#jumbo
+{
+	margin-top:10px;
+	height:500px;
+	display:block;
+	
+}
+/*Style elements for sheet tabs */
+.sheetTabs
+{
+	border: solid #748BA7 1px;
+	background-color: #748BA7;
+	padding-left: 0px;
+	padding-right:0px;
+	width:100%;
+	height:30px;
+	border-radius:5px;
+}
+
+.active .sheetTabs 
+{
+	background-color: #051C38;
+}
+
+.active .sheetTabs a
+{
+	color: #748BA7;
+}
+
+.tabLinks
+{
+	padding-left : 0px;
+	padding-right:0px;
+
+	
+}
+
+.sheetTabs a
+{
+	text-align:center;
+	padding-left: 40%;
+	color:#051C38;
+	font-size: 20px;
+}
+
+/*Style elements for user information and history */
+#userInfo
+{
+	border: solid #051C38 3px;
+	border-radius:5px;
+	background-color: #E8EFF8;
+	height:200px;
+	margin-top:-48%;
+	margin-left:-7%;
+	padding-left:30px;
+}
+
+#userInfo p
+{
+	color:#051C38;
+}
+
+#userHist
+{
+	width: 85%; 
+	height: 300px; 
+	overflow-y: scroll;
+	background-color:#E8EFF8;
+}
+
+#upcoming
+{
+		overflow-y: scroll;
+}
+
+#userHist td
+{
+	color:black;
+	padding-left: 10px;
+}
+
+/*Style elements for main panel in home tab*/
+.mainContent
+{
+	height:600px;
+	width:100%;
+	background-color:#E8EFF8;
+	border-radius:5px;
+}
+
+.homeDivs
+{
+	height:575px;
+	margin-top:1%;
+	background-color:#748BA7;
+	border: solid #748BA7 1px;
+	border-radius:5px;
+	
+	
+}
+
+.eventThumb
+{
+	height:95px;
+	width:106px;
+}
+
+.eventDetail
+{
+	margin-top:100px;
+}
+.eventDetail td
+{
+	padding-left:30px;
+	
+}
+
+.selected
+{
+	background-color: #051C38;
+	border-radius: 5px;
+}
+.eventThumb a img
+{
+	height:75px;
+	width: 86px;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+#upcoming
+{
+	margin-left:2%;
+}
+
+#selectedEvent
+{
+	
+	margin-left:1%;
+	width:70%;
+}
+
+#settings .homeDivs
+{
+	margin-left:4%;
+}
+
+/*Style elements for buttons and other page controls*/
+#bookItBtn
+{
+	width:30%;
+	height:10%;
+	background-color:#051C38;
+	margin-top:25%;
+	padding-top:2%;
+	border-radius:5px;
+	margin-left:30%;
+}
+
+#bookItBtn a
+{
+	padding-left:35%;
+	font-size:20px;
+}
+
+.bookingButtons
+{
+	width:50%;
+	height:10%;
+	background-color:#051C38;
+	margin-top:25%;
+	padding-top:2%;
+	border-radius:5px;
+	margin-left:22%;
+}
+
+.bookingButtons p
+{
+	padding-left:20%;
+	font-size:12px;
+}
+
+/*Order completion pane styling elements*/
+#orderComplete p
+{
+	color:#051C38;
+	font-size:28px;
+	margin-left:10%;
+	padding-top:5%;
+}
+
+/*Settings pane*/
+#settings p
+{
+	color:#051C38;
+	font-size:28px;
+	margin-left:2%;
+	padding-top:1%;
+}
+
+/*Log out pane*/
+#logout .homeDivs
+{
+	margin-left:3%;	
+}
+
+#logout .homeDivs p
+{
+	color:#051C38;
+	font-size:28px;
+	margin-left:2%;
+	padding-top:1%;	
+}
+
+/*Buttons and page controls */
+#uploadButton
+{
+	background-color:#E8EFF8;
+	width: 20%;
+	border-radius:5%;
+}
+
+#uploadButton p
+{
+	padding-left:30%;
+	font-size:18px;
+}
+
+.logButtons
+{
+	background-color:#E8EFF8;
+	width: 20%;
+	border-radius:5%;
+}
+
+.logButtons p
+{
+	padding-left:25%;
+	font-size:18px;
+}
+
+#goHome
+{
+	width:50%;
+	height:10%;
+	background-color:#051C38;
+	margin-top:25%;
+	padding-top:2%;
+	border-radius:5px;
+	margin-left:22%;
+}
+
+#goHome p
+{
+	padding-left:22%;
+	margin-top:-7%;
+	font-size:28px;
+	color:#E8EFF8;	
+}
+
+/*Style content for toggle switch*/
+input.switch:empty
+{
+	display:none;
+}
+
+input.switch:empty ~ label
+{
+	position: relative;
+	float: left;
+	line-height: 1.6em;
+	text-indent: 4em;
+	margin: 0.2em 0;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input.switch:empty ~ label:before, 
+input.switch:empty ~ label:after
+{
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: ' ';
+	width: 3.6em;
+	background-color: #c33;
+	border-radius: 0.3em;
+	box-shadow: inset 0 0.2em 0 rgba(0,0,0,0.3);
+	-webkit-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+
+input.switch:empty ~ label:after
+{
+	width: 1.4em;
+	top: 0.1em;
+	bottom: 0.1em;
+	margin-left: 0.1em;
+	background-color: #fff;
+	border-radius: 0.15em;
+	box-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.2);
+}
+
+input.switch:empty ~ label:before, 
+input.switch:empty ~ label:after
+{
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: ' ';
+	width: 3.6em;
+	background-color: #c33;
+	border-radius: 0.3em;
+	box-shadow: inset 0 0.2em 0 rgba(0,0,0,0.3);
+	-webkit-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+
+input.switch:empty ~ label:after
+{
+	width: 1.4em;
+	top: 0.1em;
+	bottom: 0.1em;
+	margin-left: 0.1em;
+	background-color: #fff;
+	border-radius: 0.15em;
+	box-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.2);
+}
+
+input.switch:checked ~ label:before
+{
+	background-color: #393;
+}
+
+input.switch:checked ~ label:after
+{
+	margin-left: 2em;
+}
