@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
   
   def create
-    @event = event.new(event_params)
+    @event = current_user.event.build(event_params)
     if @event.save
       flash[:success] = "Event created"
     else
@@ -18,10 +18,13 @@ class EventsController < ApplicationController
     end
   end
   
+  def destroy
+  end
+  
   private
   
     def event_params
       params.require(:event).permit(:title, :image_thumb, :venu, :when_at,
-        :total_tickets, :available_tickets, :user)
+        :total_tickets, :available_tickets)
     end
 end

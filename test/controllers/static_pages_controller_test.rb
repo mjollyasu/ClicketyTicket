@@ -7,6 +7,7 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select "title", "Landing | Clickety Ticket"
   end
+  
 
  # test "should get home" do
 #    get :home

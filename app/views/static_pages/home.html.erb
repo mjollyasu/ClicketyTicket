@@ -1,30 +1,15 @@
-<% provide(:title, "Home") %>
 
-
-			<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@event) do |f| %>
-      <%= render 'shared/error_messages' %>
-      
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control' %>
-
-      <%= f.label :event_thumb %>
-      <%= f.password_field :event_thumb, class: 'form-control' %>
-
-      <%= f.label :venue %>
-      <%= f.password_field :venue, class: 'form-control' %>
-      
-      <%= f.label :when_at %>
-      <%= f.password_field :when_at, class: 'form-control' %>
-      
-      <%= f.label :total_tickets %>
-      <%= f.password_field :total_tickets, class: 'form-control' %>
-      
-      <%= f.label :available_tickets %>
-      <%= f.password_field :available_tickets, class: 'form-control' %>
-
-      <%= f.submit "Create my event", class: "btn btn-primary" %>
-    <% end %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
   </div>
-</div>
+
+  
+
+    
