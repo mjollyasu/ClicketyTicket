@@ -40,8 +40,9 @@ $(document).ready(function()
 	//Controls which sheet tab is active and shows/hides appropriate content in the main pane
 	$(".tabLinks .sheetTabs a").on("click", function(e)  {
         var currentAttrValue = $(this).attr("href");
-        $("#jumbo " + ".mainPanel " + currentAttrValue).show().siblings().hide();
+        $("#jumboT " + ".mainPanel " + currentAttrValue).show().siblings().hide();
         $(this).parent(".sheetTabs").parent(".tabSpace").addClass("active").siblings().removeClass("active");
+        //console.log("Showing" + currentAttrValue)
         e.preventDefault();
     });
 	

@@ -77,8 +77,6 @@ h1
 	background-size: cover;
 }
 
-
-
 .userForms
 {
 	margin-left:-20px;
@@ -89,7 +87,7 @@ h1
 {
 	padding-right:50px;
 	padding-left:50px;
-	margin-left:70px;
+	margin-left:45px;
 	display:inline-block;
 	
 }
@@ -143,14 +141,10 @@ h1
 
 
 
-#titleBar
-{
-	border-radius: 5px;
-	background-color:#051C38;	
-}
 
 
-#jumbo
+
+#jumboT
 {
 	margin-top:10px;
 	height:500px;
@@ -183,8 +177,6 @@ h1
 {
 	padding-left : 0px;
 	padding-right:0px;
-
-	
 }
 
 .sheetTabs a
@@ -202,8 +194,8 @@ h1
 	border-radius:5px;
 	background-color: #E8EFF8;
 	height:200px;
-	margin-top:-48%;
-	margin-left:-7%;
+	margin-top:-47%;
+	margin-left:-6%;
 	padding-left:30px;
 }
 
@@ -247,8 +239,6 @@ h1
 	background-color:#748BA7;
 	border: solid #748BA7 1px;
 	border-radius:5px;
-	
-	
 }
 
 .eventThumb
@@ -264,7 +254,6 @@ h1
 .eventDetail td
 {
 	padding-left:30px;
-	
 }
 
 .selected
@@ -356,7 +345,7 @@ h1
 	margin-left:3%;	
 }
 
-#logout .homeDivs p
+#logout .homeDivs p 
 {
 	color:#051C38;
 	font-size:28px;
@@ -385,11 +374,14 @@ h1
 	border-radius:5%;
 }
 
-.logButtons p
+.logButtons a
 {
 	padding-left:25%;
 	font-size:18px;
+	color:#051C38;
 }
+
+
 
 #goHome
 {

@@ -5,67 +5,53 @@
 			
 			<!-- end page head -->
 
-			<div class="row" id = "jumbo">
-				
-				<div class="col-lg-2">
-				</div>
-				
-				<div class="col-lg-3 twoBoxes" >
-					<div class="panel panel-default" id = "signUp">
-						<div class="panel-heading" id = "signUpHead"><h3>Get Started!</h3></div>
-						<div class="panel-body">
-							<form class="col-lg-12 userForms">
-								<div class="input-group" >
-									<input class="form-control input-lg" title="Email" placeholder="Enter your email address" type="text">				
-								</div>
-							</form>	
-							<br>
-							<form class="col-lg-12 userForms" id = "form2">
-								<div class="input-group">
-									<input class="form-control input-lg" title="Password" placeholder="Enter your password" type="text">
-									
-								</div>
-							</form>
-							<form class="col-lg-12 userForms">
-								<div class="input-group">
-									<input class="form-control input-lg" title="Confirm Password" placeholder="Confirm your password" type="text">									
-								</div>
-							</form>
-						</div>					
-						<span class="input-group-btn okButton"><button class="btn btn-lg btn-primary okButton" type="button">OK</button></span>
-					</div>
-				</div>
-
-				<div class="col-lg-2">
-				</div>
-				
-				<div class="col-lg-3 twoBoxes">
-					<div class="panel panel-default" id = "signUp">
-						<div class="panel-heading" id = "signUpHead"><h3>Welcome Back!</h3></div>
-						<div class="panel-body">
-							<form class="col-lg-12 userForms">
-								<div class="input-group">
-									<input class="form-control input-lg" title="Email" placeholder="Enter your email address" type="text">
-								</div>
-							</form>	
-							<br>
-							<form class="col-lg-12 userForms" id = "form2">
-								<div class="input-group">
-									<input class="form-control input-lg" title="Password" placeholder="Enter your password" type="text">									
-								</div>
-							</form>	
-						</div>					
-						<span class="input-group-btn okButton"><button class="btn btn-lg btn-primary okButton" id = "okButton2" type="button">OK</button></span>
-					</div>
-				</div>
-				<div class="col-lg-2">
-				</div>
-				
+		<div class="row" id = "jumbo">
+			
+			<div class="col-lg-2">
 			</div>
+			
+			<div class="col-lg-3 twoBoxes">
+				<div class="panel panel-default" id = "signUp">
+					<div class="panel-heading" id = "signUpHead"><h3>Get started!</h3></div>
+					<div class="panel-body">
+						<h4>Join now! It's quick and easy.</h4>
+						<br>
+					</div>					
+					
+					<span class="input-group-btn okButton">
+						<button class="btn btn-lg btn-primary okButton" id = "okButton2" type="button">
+							<%= link_to "Sign up", signup_path %>
+						</button>
+					</span>
+					
+				</div>
+			</div>
+
+			<div class="col-lg-2">
+			</div>
+			
+			<div class="col-lg-3 twoBoxes">
+				<div class="panel panel-default" id = "signUp">
+					<div class="panel-heading" id = "signUpHead"><h3>Welcome Back!</h3></div>
+					<div class="panel-body">
+						<h4>Click below to log in!</h4>
+						<br>
+					</div>					
+					<span class="input-group-btn okButton">
+						<button class="btn btn-lg btn-primary okButton" id = "okButton2" type="button">
+							<%= link_to "Sign in", login_path %>
+						</button>
+					</span>
+				</div>
+			</div>
+			<div class="col-lg-2">
+			</div>
+			
+		</div>
 		  
 
 
-		</div> 
+
 
 		<div class="container">		  
 			<hr>		  
@@ -93,4 +79,4 @@
 				  </div>
 				</div>
 			</div>
-
+		</div>
