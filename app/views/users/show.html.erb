@@ -17,16 +17,7 @@
 
 
 	<!-- debugging -->
-			<div class="row">
-				<% if logged_in? %>
-					<p>You are logged in</p>
-					<%= current_user.name %>
-				<% else %>
-					<p>You are not logged in</p>
-				<% end %>
-	<!-- end debugging -->		
-				
-			</div>
+	
 			</div>
 			<div class="row" >
 				<div class="col-lg-2">
@@ -353,19 +344,10 @@
 					-->					
 					<div class = "mainContent" id = "settings">
 							<div class = "col-md-11 homeDivs">
-								<p>Please upload profile picture:</p>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<br> <br>
-								<div id = "uploadButton"><p>Upload</p></div>
+								<div class="gravatar_edit">
+						      <%= gravatar_for @user %>
+						      <a href="http://gravatar.com/emails">change</a>
+						    </div>
 							</div>
 					</div>
 					
@@ -390,8 +372,9 @@
 						<!-- <p>Example Person</p> 
 						<p>example@person.com</p> -->
 						<p><%= current_user.name %></p>
+						<%= gravatar_for current_user %>
 						
-						<img src = "CTImages/outline.jpg" height = "100" width = "100" />
+						
 					</div>
 					
 					<!-- Toggle switch to display the user's history -->
