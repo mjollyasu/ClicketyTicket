@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   get   'logout'  => 'sessions#destroy'
   delete 'logout'  => 'sessions#destroy'
+  get 'create' => 'events#new'
+  
   resources :users
+  
+  resources :events, only: [:create, :destroy]
 
   
 end

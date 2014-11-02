@@ -406,6 +406,14 @@
 					********************************************************************************
 					-->
 					<div id = "userHist">
+						<% if @user.events.any? %>
+							<ol class = "events">
+								<%= render @events %>
+							</ol>
+						<% else %>
+							<p id="noHistory">You have no events</p>
+						<% end %>
+						<!--
 						<table>
 							<tr>
 								<td><b>Event Name</b></td>
@@ -424,6 +432,7 @@
 								<td>10/31/2014</td>
 							</tr>
 						</table>
+						-->
 					</div>					
 				</div>				
 			</div>
