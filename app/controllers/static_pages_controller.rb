@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @event = current_user.events.build
+    @event = Event.new
   end
 end
