@@ -5,8 +5,7 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
+        
       </h1>
     </section>
   </aside>
@@ -17,16 +16,7 @@
 
 
 	<!-- debugging -->
-			<div class="row">
-				<% if logged_in? %>
-					<p>You are logged in</p>
-					<%= current_user.name %>
-				<% else %>
-					<p>You are not logged in</p>
-				<% end %>
-	<!-- end debugging -->		
-				
-			</div>
+			
 			</div>
 			<div class="row" >
 				<div class="col-lg-2">
