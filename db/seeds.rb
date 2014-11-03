@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+15.times do |n|
+  name = "example-#{n+1}@asu.edu"
+  password = "password"
+  User.create!(name:  name,
+              password:              password,
+              password_confirmation: password,)
+end
+
+users = User.order(:created_at).take(6)
+5.times do
+  title = "Fun event"
+  event_thumb = 2
+  venue = "Arena"
+  when_at = "Tuesday"
+  total_tickets = 50
+  available_tickets = 25
+  users.each { |user| user.events.create!(title: title, event_thumb: event_thumb,
+    venue: venue, when_at: when_at, total_tickets: total_tickets, 
+    available_tickets: available_tickets) }
+
+end
