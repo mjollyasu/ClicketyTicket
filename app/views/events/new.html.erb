@@ -14,7 +14,15 @@
       <%= f.text_field :venue, class: 'form-control' %>
       
       <%= f.label :when_at %>
-      <%= f.text_field :when_at, :value => date_mdY(@event.when_at), class: 'form-control' %>
+
+
+      <%= f.datetime_select(:when_at, :prompt => {:month => 'Select month', 
+                            :day => 'Select day',
+                            :hour => 'Select hour',
+                            :minute => 'Select minute'},
+                            :start_year => Time.now.year,
+                            :order =>[:month, :day, :year, :hour, :minute],
+                            :minute_step => 15)  %>
       
       <%= f.label :total_tickets %>
       <%= f.text_field :total_tickets, class: 'form-control' %>

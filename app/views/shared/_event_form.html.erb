@@ -2,9 +2,9 @@
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :title, placeholder: "title" %>
-    <%= f.text_area :event_thumb, placeholder: "thumb" %>
+    <%= f.text_area :event_thumb, placeholder: 1 %>
     <%= f.text_area :venue, placeholder: "venue" %>
-    <%= f.text_area :when_at, placeholder: "when" %>
+    <%= f.text_area :when_at, placeholder: 13.days.from_now %>
     <%= f.text_area :total_tickets, placeholder: "total tx" %>
     <%= f.text_area :available_tickets, placeholder: "avail tx" %>
     <%= f.text_area :user_id, placeholder: "user" %>

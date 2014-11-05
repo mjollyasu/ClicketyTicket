@@ -10,9 +10,8 @@ module ApplicationHelper
   end
   
   
-  
   def date_mdY(date)
     date.nil? ? "" : date.strftime("%m-%d-%Y")
   end
-
+  
 end

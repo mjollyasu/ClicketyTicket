@@ -4,9 +4,9 @@ class EventTest < ActiveSupport::TestCase
   def setup
     @user = users(:matt)
     @event = Event.new(title: "Example", event_thumb: 2, venue: "Downtown", 
-      when_at: "Tuesday night", total_tickets: 350, available_tickets:12)
+      when_at: 13.days.from_now, total_tickets: 350, available_tickets:12)
     @event2 = @user.events.build(title: "Example", event_thumb: 2, venue: "Downtown", 
-      when_at: "Tuesday night", total_tickets: 350, available_tickets:12)
+      when_at: 13.days.from_now, total_tickets: 350, available_tickets:12)
   end
   
   test "event should be valid" do
@@ -41,7 +41,7 @@ class EventTest < ActiveSupport::TestCase
   end
     
   test "No tickets offered" do
-    @event.when_at = "Tuesday night"
+    @event.when_at = 13.days.from_now
     @event.total_tickets = 0
     assert_not @event.valid?
   end
