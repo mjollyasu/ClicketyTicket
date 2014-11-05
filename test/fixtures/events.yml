@@ -4,7 +4,7 @@ one:
   title: MyString
   event_thumb: 1
   venue: MyString
-  when_at: MyString
+  when_at: <%= 13.days.from_now %>
   total_tickets: 1
   available_tickets: 1
   user_id: 
@@ -14,7 +14,7 @@ two:
   title: MyString
   event_thumb: 1
   venue: MyString
-  when_at: MyString
+  when_at: <%= 2.years.from_now %>
   total_tickets: 1
   available_tickets: 1
   user_id: 

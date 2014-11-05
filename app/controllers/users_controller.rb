@@ -2,7 +2,10 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @events = @user.events
+    #@events = @user.events
+
+    @events = Event.all
+    #@events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day).all
   end
   
   def new
