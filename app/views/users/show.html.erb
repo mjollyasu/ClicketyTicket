@@ -190,7 +190,7 @@
 					<div id = "userHist">
 						<% if @user.events.any? %>
 							<ol class = "events">
-								<%= render @events %>
+								<p><%= render @events %></p>
 							</ol>
 						<% else %>
 							<p id="noHistory">You have no events</p>
