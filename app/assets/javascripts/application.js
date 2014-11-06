@@ -66,10 +66,13 @@ $(document).ready(function()
 	//Shows the booking panel, when the "book it" button is clicked
 	$(".bookItBtn").on('click', function(e)
 	{
+		alert( $(this).data('id') );
+		
 		var bookEvent = $(".eventDetail:visible");
 		$("#upcomingPane").hide();
 		$(".bookItBtn").hide();
 		$("#bookingPane").toggle();
+
 		e.stop();
 	});
 	
@@ -105,19 +108,41 @@ $(document).ready(function()
 		$("#orderComplete").show();
 		$("#completeMessage").show();	
 	});
+	
+	
 
 });
 
 
-//Shows the booking panel, when the "book it" button is clicked
-function setEventFunction(val)
-{
-   $.ajax({
-     methond: "POST",
-     url: '/events/' + val,
-     contentType: 'application/json; charset=UTF-8'
-   });
+// //Shows the booking panel, when the "book it" button is clicked
+// function setEventFunction(val)
+// {
+//   alert(val);	
+// 	new Ajax.Request('<%= event_selected_path :id=' + val + '%>')
+	
+// 	// render :json => {
+//  //         :location => url_for(:controller => 'jobs', :action => 'index'),
+//  //         :flash => {:notice => "Hello #{authorized_user.name}."}
+//  //       }
+ 
+//   // $.ajax({
+//   // 	type: 'json',
+//   //	success: functon(data) {
+//   //  data = $.parseJSON(data);
+//   //  if (data.location) {
+//   //    window.location.href = data.location;
+//   //  }
+//   //  if (data.flash && data.flash.notice) {
+//   //    // Maybe display flash message, etc.
+//   //  }
+//   //}
+   	
+   	
+//   //   methond: "PUT",
+//   //   url: '/orders/' + val,
+//   //   contentType: 'application/json; charset=UTF-8'
+//   // });
 
-   //$.get('/current_event?id=' + val, null, null, null);
-   alert(val);
-};	
+//   //$.get('/current_event?id=' + val, null, null, null);
+
+// };	

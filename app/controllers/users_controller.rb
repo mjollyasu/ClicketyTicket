@@ -6,20 +6,24 @@ class UsersController < ApplicationController
 
     #@events = Event.all
     @events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day ).all
-    #@events = @events.where('title == (?)', "Sporting Event 2" ).all
     @events = @events.where('available_tickets > 0').all
+    
+    @orders = Order.where('user_id >= (?)', @user.id ).all
+    
     
   end
   
-    
- 
-  
   def new
-      @user = User.new
+    @user = User.new
+    # @order = Order.new
   end
   
   def create
     @user = User.new(user_params)
+    # @orders = Order.all
+    # @events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day ).all
+    # @events = @events.where('available_tickets > 0').all
+        
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Clickety Ticket!"

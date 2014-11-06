@@ -8,11 +8,15 @@ class EventsController < ApplicationController
     @events = @events.where('available_tickets > 0').all
   end
   
+  def selected
+    @selected_event = Event.find(params[:id])
+  end
+  
   def show
     @event = Event.find(params[:id])
   end
   
-  def cuxrrent
+  def current
     puts params.include?(:id)
     
     @current_event = Event.find(params[:id])
