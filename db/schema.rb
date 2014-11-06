@@ -11,22 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102102809) do
+ActiveRecord::Schema.define(version: 20141105170310) do
 
   create_table "events", force: true do |t|
     t.string   "title"
     t.integer  "event_thumb"
     t.string   "venue"
-    t.string   "when_at"
     t.integer  "total_tickets"
     t.integer  "available_tickets"
     t.integer  "user_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.datetime "when_at"
   end
 
   add_index "events", ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at"
   add_index "events", ["user_id"], name: "index_events_on_user_id"
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "tickets_purchased"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "orders", ["event_id"], name: "index_orders_on_event_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -20,7 +20,7 @@ users = User.order(:created_at).take(6)
   title = "Fun event"
   event_thumb = 2
   venue = "Arena"
-  when_at = "Tuesday"
+  when_at = 13.days.from_now
   total_tickets = 50
   available_tickets = 25
   users.each { |user| user.events.create!(title: title, event_thumb: event_thumb,

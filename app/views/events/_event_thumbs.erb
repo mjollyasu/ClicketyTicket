@@ -1,0 +1,10 @@
+<% if ! @events.nil? %>
+  <% @events.each do |event| %>
+  
+    <div class = "eventThumb">
+      <a href = "#event<%= event.id %>"><%= image_tag("ticketThumb#{event.event_thumb}.jpg", :alt => "ticketThumb") %></a>
+    </div>
+    <br>
+    
+  <% end %>
+<% end %>

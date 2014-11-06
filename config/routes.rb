@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
+  resources :orders
 
+  get 'sessions/new'
+  get 'events/new'
   get 'users/new'
 
   root   'static_pages#landing'
-  get   'home' => 'static_pages#home'
+  get    'home' => 'static_pages#home'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
-  get   'logout'  => 'sessions#destroy'
+  get    'logout'  => 'sessions#destroy'
   delete 'logout'  => 'sessions#destroy'
   
   

@@ -1,0 +1,33 @@
+<% if ! @events.nil? %>
+  <% @events.each do |event| %>
+    
+    <div class = "eventDetail" id = "event<%= event.id %>">
+        
+        <h4><%= event.title %></h4>
+        <br>
+        <table>
+        	<tr>
+        		<td> Title </td>
+        		<td> <%= event.title %> </td>
+        	</tr>
+        	<tr>
+        		<td> Venue </td>
+        		<td> <%= event.venue %> </td>
+        	</tr>
+        	<tr>
+        		<td> Date </td>
+        		<td> <%= event.when_at %> </td>
+        	</tr>
+        	<tr>
+        		<td> Total Tickets </td>
+        		<td> <%= event.total_tickets %> </td>
+        	</tr>
+        	<tr>
+        		<td> Availabe Tickets </td>
+        		<td> <%= event.available_tickets %> </td>
+        	</tr>
+        </table>
+    </div>
+  
+  <% end %>
+<% end %>
