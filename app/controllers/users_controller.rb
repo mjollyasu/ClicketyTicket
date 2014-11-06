@@ -10,7 +10,10 @@ class UsersController < ApplicationController
     @events = @events.where('available_tickets > 0').all
     
   end
-    
+  
+  def place_order_event
+    @TESTVAL = 7
+  end
   
   def new
       @user = User.new
