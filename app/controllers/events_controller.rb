@@ -12,6 +12,19 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
   
+  def cuxrrent
+    puts params.include?(:id)
+    
+    @current_event = Event.find(params[:id])
+    if ! @current_event.nil?
+     flash[:success] = "Event created"
+     flash[:notice] = "WHAT"
+    else
+     flash[:success] = "NOPE"
+     flash[:notice] = "NOPE"
+    end
+  end
+  
   def new
     @event = Event.new
   end

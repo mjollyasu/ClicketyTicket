@@ -1,7 +1,15 @@
-<% if ! @events.nil? %>
-  <% @events.each do |event| %>
-    
-    <div class = "eventDetail" id = "event<%= event.id %>">
+
+<div class = "col-md-9 homeDivs" id = "selectedEvent">
+  <h3>Event Details:</h3>
+  
+ 	<div class = "eventDetail" id = "event0">
+		<h4>Please select an event</h4>
+	</div>
+	
+  <% if ! @events.nil? %>
+    <% @events.each do |event| %>
+      
+      <div class = "eventDetail" id = "event<%= event.id %>">
         
         <h4><%= event.title %></h4>
         <br>
@@ -27,7 +35,16 @@
         		<td> <%= event.available_tickets %> </td>
         	</tr>
         </table>
-    </div>
-  
+        
+        <!-- "Book it" button. Displays the booking pane for the 
+    		currently selected event. -->
+    		<div class = "bookItBtn" onclick="setEventFunction(<%= event.id %>)" >									
+    			<a>Book it!</a>
+    		</div>
+    		
+      </div>
+    
+    <% end %>
   <% end %>
-<% end %>
+
+</div>

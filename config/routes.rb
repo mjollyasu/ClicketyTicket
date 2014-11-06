@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'events/new'
   get 'users/new'
-
+  
+  #get '/events/:id' => 'events#current'
+  post 'current_event' => 'events#current'
+  
   root   'static_pages#landing'
   get    'home' => 'static_pages#home'
   get    'signup'  => 'users#new'

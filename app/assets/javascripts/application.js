@@ -8,7 +8,7 @@ $(document).ready(function()
 	$("#logout").hide();
 	$(".eventDetail").hide();
 	$("#event0").hide();
-	$("#bookItBtn").hide();
+	$(".bookItBtn").hide();
 	$("#bookingPane").hide();
 	$("#orderComplete").hide();
 	$("#orderError").hide();
@@ -54,20 +54,21 @@ $(document).ready(function()
 		$(currentEvent).show().siblings(".eventDetail").hide();
 		if(currentEvent !== "#event0")
 		{
-			$("#bookItBtn").show();
+			$(".bookItBtn").show();
 		}else
 		{
-			$("#bookItBtn").hide();
+			$(".bookItBtn").hide();
 		}		
         e.preventDefault();
     });
 	
+	
 	//Shows the booking panel, when the "book it" button is clicked
-	$("#bookItBtn").on('click', function(e)
+	$(".bookItBtn").on('click', function(e)
 	{
 		var bookEvent = $(".eventDetail:visible");
 		$("#upcomingPane").hide();
-		$("#bookItBtn").hide();
+		$(".bookItBtn").hide();
 		$("#bookingPane").toggle();
 		e.stop();
 	});
@@ -77,7 +78,7 @@ $(document).ready(function()
 	{
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
-		$("#bookItBtn").show();
+		$(".bookItBtn").show();
 		$("#orderComplete").hide();
 		$("#home").show();		
 	});
@@ -87,7 +88,7 @@ $(document).ready(function()
 	{
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
-		$("#bookItBtn").show();
+		$(".bookItBtn").show();
 		$("#orderComplete").hide();
 		$("#home").show();		
 	});
@@ -99,11 +100,24 @@ $(document).ready(function()
 	{
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
-		$("#bookItBtn").show();
+		$(".bookItBtn").show();
 		$("#home").hide();
 		$("#orderComplete").show();
-		$("#completeMessage").show();		
+		$("#completeMessage").show();	
 	});
-	
-	
+
 });
+
+
+//Shows the booking panel, when the "book it" button is clicked
+function setEventFunction(val)
+{
+   $.ajax({
+     methond: "POST",
+     url: '/events/' + val,
+     contentType: 'application/json; charset=UTF-8'
+   });
+
+   //$.get('/current_event?id=' + val, null, null, null);
+   alert(val);
+};	

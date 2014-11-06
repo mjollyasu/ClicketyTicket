@@ -11,9 +11,8 @@ class UsersController < ApplicationController
     
   end
   
-  def place_order_event
-    @TESTVAL = 7
-  end
+    
+ 
   
   def new
       @user = User.new

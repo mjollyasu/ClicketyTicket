@@ -90,22 +90,16 @@
 							********************************************************************************
 							********************************************************************************
 							-->
-							<div class = "col-md-9 homeDivs" id = "selectedEvent">
-								<h3>Event Details:</h3>
+						
+							
+							<%= render 'events/event_detail' %>
+							
+							<!-- "Book it" button. Displays the booking pane for the 
+							currently selected event. -->
+							<!-- <div id = "bookItBtn">									
+								<a>Book it!</a>
+							</div> -->
 								
-								<div class = "eventDetail" id = "event0">
-									<h4>Please select an event</h4>
-								</div>
-								
-								<%= render 'events/event_detail' %>
-								
-								<!-- "Book it" button. Displays the booking pane for the 
-								currently selected event. -->
-								<div id = "bookItBtn">									
-									<a>Book it!</a>
-								</div>
-								
-							</div>
 						</div>
 					</div>
 					
