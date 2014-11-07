@@ -1,14 +1,6 @@
-
-<table>
-	<tr>
-		<td><b>Event Name</b></td>
-		<td><b>Date</b></td>
-	</tr>
-  <% @users.event.each do |event| %>
-    <tr>
-			<td><%= event.title %></td>
-			<td><%= event.when_at %></td>
-		</tr>
-  <% end %>
-    
-</table>
+<li id="event-<%=Events.id %>">
+  
+  <span class="title"><p><%= event.title %></p></span>
+  <span class="when_at"><p><%= event.when_at %></p></span>
+  
+</li>
