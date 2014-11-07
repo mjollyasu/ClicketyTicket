@@ -8,8 +8,25 @@ class EventsController < ApplicationController
     @events = @events.where('available_tickets > 0').all
   end
   
+  def selected
+    @selected_event = Event.find(params[:id])
+  end
+  
   def show
     @event = Event.find(params[:id])
+  end
+  
+  def current
+    puts params.include?(:id)
+    
+    @current_event = Event.find(params[:id])
+    if ! @current_event.nil?
+     flash[:success] = "Event created"
+     flash[:notice] = "WHAT"
+    else
+     flash[:success] = "NOPE"
+     flash[:notice] = "NOPE"
+    end
   end
   
   def new

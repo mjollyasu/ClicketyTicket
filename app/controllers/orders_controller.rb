@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @orders = Order.all
   end
 
   # GET /orders/new
@@ -24,14 +25,27 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    
     @order = Order.new(order_params)
-
+    @order.user_id = $current_user.id
+    @order.event_id = $current_event.id
+    
     respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+      if @order.tickets_purchased <= $current_event.available_tickets
+        
+        $current_event.available_tickets -= @order.tickets_purchased
+        
+        if @order.save && $current_event.save
+          #format.html { render "/users/#{$current_user.id}", notice: 'Order was successfully created.' }
+          format.html { redirect_to $current_user, notice: 'Order was successfully created.' }
+          format.json { render :show, status: :created, location: $current_user }
+        else
+          format.html { redirect_to $current_user, notice: 'Unable to process order.' } #"/users/#{$current_user.id}" }
+          format.json { render json: @order.errors, status: :unprocessable_entity }
+        end
       else
-        format.html { render :new }
+        #flash.now[:danger] = "Unable to process order - ordering more tickets than available"
+        format.html { redirect_to $current_user, notice: 'Unable to process order - ordering more tickets than available.' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end

@@ -70,17 +70,9 @@
 									************************************************************
 									*************************************************************
 									-->
+									<%= render 'orders/new' %>
 									
-									<form id="ticket_number">
-										Please enter the number of tickets:
-										<input type="text" name="numberOfTickets"><br>
-									</form>
-									<br>
-									<br>
-									
-									<!-- Page control buttons. Place order and cancel -->
-									<div class = "bookingButtons" id="orderButton"><p><b>Place Order</b></p></div>
-									<div class = "bookingButtons" id ="goBack"><p><b>Cancel</b></p></div>
+
 								</div>
 							</div>
 							
@@ -90,24 +82,18 @@
 							********************************************************************************
 							********************************************************************************
 							********************************************************************************
-							-->
-							<div class = "col-md-9 homeDivs" id = "selectedEvent">
-								<h3>Event Details:</h3>
-								
-								<div class = "eventDetail" id = "event0">
-									<h4>Please select an event</h4>
-								</div>
-								
-								<%= render 'events/event_detail' %>
+
+						
+							
+							<%= render 'events/event_detail' %>
+							
+							<!-- "Book it" button. Displays the booking pane for the 
+							currently selected event. -->
+							<!-- <div id = "bookItBtn">									
+								<a>Book it!</a>
+							</div> -->
 
 								
-								<!-- "Book it" button. Displays the booking pane for the 
-								currently selected event. -->
-								<div id = "bookItBtn">									
-									<a>Book it!</a>
-								</div>
-								
-							</div>
 						</div>
 					</div>
 					

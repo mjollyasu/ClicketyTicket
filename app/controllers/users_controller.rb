@@ -1,26 +1,43 @@
 class UsersController < ApplicationController
+ 
+  #helper_method :current_event
   
+  # $current_event
+  # $current_user
+    
   def show
+    
     @user = User.find(params[:id])
     #@events = @user.events
 
     #@events = Event.all
     @events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day ).all
-    #@events = @events.where('title == (?)', "Sporting Event 2" ).all
     @events = @events.where('available_tickets > 0').all
     
+    @order = Order.new
+    
+    @orders = Order.where('user_id >= (?)', @user.id ).all
+    
   end
-  
-  def place_order_event
-    @TESTVAL = 7
+ 
+  def current_event
+    #puts params[:event_id]
+    #puts params[:id]
+    $current_event = Event.find_by(id: params[:event_id]) 
+    head :ok, content_type: "text/html"
   end
   
   def new
-      @user = User.new
+    @user = User.new
+    # @order = Order.new
   end
   
   def create
     @user = User.new(user_params)
+    # @orders = Order.all
+    # @events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day ).all
+    # @events = @events.where('available_tickets > 0').all
+        
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Clickety Ticket!"

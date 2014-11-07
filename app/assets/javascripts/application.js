@@ -8,13 +8,12 @@ $(document).ready(function()
 	$("#logout").hide();
 	$(".eventDetail").hide();
 	$("#event0").hide();
-	$("#bookItBtn").hide();
+	$(".bookItBtn").hide();
 	$("#bookingPane").hide();
 	$("#orderComplete").hide();
 	$("#orderError").hide();
 	$("#errorMessage").hide();
 	$("#completeMessage").hide();
-	
 	
 	
     $(".twoBoxes").mouseenter(function()
@@ -23,16 +22,12 @@ $(document).ready(function()
 		$(this).siblings().fadeTo(500, 0.5);
 	});    
 	
-
-
-
-	
 	
 	//Hides and displays the user history pane
 	$("#toggleHist").click(function(e) 
 	{
 		$("#userHist").toggle();
-		e.stops();
+		e.stop();
 
 	});
 	
@@ -54,21 +49,33 @@ $(document).ready(function()
 		$(currentEvent).show().siblings(".eventDetail").hide();
 		if(currentEvent !== "#event0")
 		{
-			$("#bookItBtn").show();
+			$(".bookItBtn").show();
 		}else
 		{
-			$("#bookItBtn").hide();
+			$(".bookItBtn").hide();
 		}		
         e.preventDefault();
     });
 	
 	//Shows the booking panel, when the "book it" button is clicked
-	$("#bookItBtn").on('click', function(e)
+	$(".bookItBtn").on('click', function(e)
 	{
+		var thisid = $(this).data('id')
+		//alert( thisid );
+		
 		var bookEvent = $(".eventDetail:visible");
 		$("#upcomingPane").hide();
-		$("#bookItBtn").hide();
+		$(".bookItBtn").hide();
 		$("#bookingPane").toggle();
+		
+		
+		$.ajax({
+               url: 'current_event/',
+               data: {
+                   event_id: thisid
+               }
+             });
+		
 		e.stop();
 	});
 	
@@ -77,7 +84,7 @@ $(document).ready(function()
 	{
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
-		$("#bookItBtn").show();
+		$(".bookItBtn").show();
 		$("#orderComplete").hide();
 		$("#home").show();		
 	});
@@ -87,7 +94,7 @@ $(document).ready(function()
 	{
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
-		$("#bookItBtn").show();
+		$(".bookItBtn").show();
 		$("#orderComplete").hide();
 		$("#home").show();		
 	});
@@ -97,13 +104,17 @@ $(document).ready(function()
 	//available and place order in back end
 	$("#orderButton").on("click", function(e)
 	{
+		
+		
+		
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
-		$("#bookItBtn").show();
+		$(".bookItBtn").show();
 		$("#home").hide();
 		$("#orderComplete").show();
-		$("#completeMessage").show();		
+		$("#completeMessage").show();	
 	});
 	
 	
+
 });
