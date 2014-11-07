@@ -2,9 +2,8 @@ class UsersController < ApplicationController
  
   #helper_method :current_event
   
-  $current_event
-  $current_user
-
+  # $current_event
+  # $current_user
     
   def show
     
@@ -14,7 +13,7 @@ class UsersController < ApplicationController
     #@events = Event.all
     @events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day ).all
     @events = @events.where('available_tickets > 0').all
-
+    
     @order = Order.new
     
     @orders = Order.where('user_id >= (?)', @user.id ).all

@@ -25,15 +25,24 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    
     @order = Order.new(order_params)
-
+    @order.user_id = $current_user.id
+    @order.event_id = $current_event.id
+    
     respond_to do |format|
-      if @order.save
-        #format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        #format.json { render :show, status: :created, location: @order }
-      else
-        #format.html { render :new }
-        #format.json { render json: @order.errors, status: :unprocessable_entity }
+      if @order.tickets_purchased <= $current_event.tickets_remaining
+        
+        $current_event.tickets_remaining -= @order.tickets_purchased
+        
+        if @order.save && $current_event.save
+          format.html { redirect_to '/users/' + $current_user.id, notice: 'Order was successfully created.' }
+          #format.json { render :show, status: :created, location: @order }
+        else
+          format.html { render '/users/' + $current_user.id }
+          #format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+        
       end
     end
   end
