@@ -69,9 +69,8 @@
 									************************************************************
 									*************************************************************
 									-->
-									<%= if @orders.nil? then "@orders NIL" else @orders end %>
-									<%= if @order.nil? then "@order NIL" else @order end %>
-									
+									<!-- might be behind since it's not rendering -->
+									Here: <%= if $current_event.nil? then "$current_event NIL" else $current_event.id end %>
 									
 								</div>
 							</div>

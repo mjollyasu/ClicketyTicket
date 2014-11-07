@@ -1,16 +1,27 @@
 class UsersController < ApplicationController
+ 
+  #helper_method :current_event
   
+  $current_event
+  $current_user
+    
   def show
+    
     @user = User.find(params[:id])
     #@events = @user.events
 
     #@events = Event.all
     @events = Event.where('when_at >= (?)', DateTime.now.beginning_of_day ).all
     @events = @events.where('available_tickets > 0').all
-    
+
     @orders = Order.where('user_id >= (?)', @user.id ).all
     
-    
+  end
+ 
+  def current_event
+    #puts params[:event_id]
+    #puts params[:id]
+    $current_event = Event.find_by(id: params[:event_id]) 
   end
   
   def new
