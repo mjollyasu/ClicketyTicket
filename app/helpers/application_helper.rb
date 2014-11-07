@@ -9,9 +9,8 @@ module ApplicationHelper
     end
   end
   
-  
-  def date_mdY(date)
-    date.nil? ? "" : date.strftime("%m-%d-%Y")
-  end
-  
+  $current_event
+  $current_user 
+   
+   
 end
