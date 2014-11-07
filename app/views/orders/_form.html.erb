@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.text_field :user_id, :placeholder => current_user.name %>
   </div>
   <div class="field">
     <%= f.label :event_id %><br>

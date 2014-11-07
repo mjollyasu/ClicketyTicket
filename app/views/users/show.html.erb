@@ -1,212 +1,129 @@
 <% provide(:name, @user.name) %>
-
-<!--
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        
-      </h1>
-    </section>
-  </aside>
-</div>
--->
-
 <% provide(:title, "Home") %>
 
-
-	<!-- debugging -->
 			
-			</div>
-			<div class="row" >
-				<div class="col-lg-2">
-				</div>
-				<div class="col-lg-8 tabLinks">
-					<div class="col-md-4 tabSpace active">
-						<div class = "sheetTabs"><a href="#home">Home</a></div>
-					</div>
-					<div class="col-md-4 tabSpace">
-						<div class = "sheetTabs"><a href="#settings">Settings</a></div>
-					</div>
-					
-					<div class="col-md-4 tabSpace">
-						<div class = "sheetTabs"><a href="#logout">Log out</a></div>
-					</div>
-				</div>
-				<div class="col-lg-2">
-				</div>
-			</div>
-				 
-			<!-- Main content panel. Contains all content for the sheet tabs-->			
-			<div class="row" id = "jumboT">
-				<div class="col-lg-2">
-				</div>
-				
-				<div class="col-lg-8 mainPanel">
-					<div class = "mainContent" id = "home">
-						<div class = "row">
-							<div class = "col-md-3 homeDivs" id = "upcoming">
-								
-								<!-- Upcoming events pane on the home tab. Contains thumbnails for each
-								upcoming event. This portion needs to interface with the database to pull
-								relevant info 
-								************************************************
-								************************************************
-								-->
-								<div id="upcomingPane">
-									<h3>Upcoming Events:</h3>
-									<%= render 'events/event_thumbs' %>
-
-								</div>
-								
-								<!-- The booking pane. Displayed only after the "Book it" button
-								has been clicked. Allows user to type in the number of tickets to 
-								purchase-->
-								<div id= "bookingPane">
-									
-									<!-- Ticket number form. Needs to send information to back-end
-									and verify with database 
-									**************************************************************
-									************************************************************
-									*************************************************************
-									-->
-									<%= render 'orders/new' %>
-									
-
-								</div>
-							</div>
-							
-							<!-- Event detail pane. Displays details for an event after its thumbnail has been clicked.
-							Needs to pull information from the database to populate data. Each event's details 
-							must be placed into a separate div in the same format as in the examples below.
-							********************************************************************************
-							********************************************************************************
-							********************************************************************************
-
-						
-							
-							<%= render 'events/event_detail' %>
-							
-							<!-- "Book it" button. Displays the booking pane for the 
-							currently selected event. -->
-							<!-- <div id = "bookItBtn">									
-								<a>Book it!</a>
-							</div> -->
-
-								
-						</div>
-					</div>
-					
-						<!-- Order completion pane. Displays a confirmation / error message
-						with a link back to the home screen. -->
-						<div class = "mainContent" id = "orderComplete">
-							<p id = "completeMessage">Your order has been placed!</p>
-							<p id = "errorMessage">There has been an error!</p>
-							<div id ="goHome"><p><b>Return to Home</b></p></div>
-						</div>
-						
-					<!-- The settings pane. Needs to include an option to allow the user to upload
-					their profile photo to the database. 
-					********************************************************************************
-					********************************************************************************
-					********************************************************************************
-					-->					
-					<div class = "mainContent" id = "settings">
-							<div class = "col-md-11 homeDivs">
-								<div class="gravatar_edit">
-      						<%= gravatar_for @user %>
-	      					<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-									<br> <br>
-      						<a href="http://gravatar.com/emails">change</a>
-    						</div>
-							</div>
-					</div>
-					
-					<!--The logout pane. Allows the user to confirm their intention to log out. -->
-					<div class = "mainContent" id = "logout">
-						<div class = "col-md-11 homeDivs">
-								<p>Are you sure you would like to log out?</p>								
-								<div class = "logButtons" id = "logoutButton"><%= link_to "Log out", logout_path, method: "delete" %></div>								
-								
-							</div>
-					</div>					
-				</div>
-				
-				<!-- User profile pane. Displays the username, email, and profile picture, if loaded.
-					Needs to interface with the database to obtain the info here. 
-					********************************************************************************
-					********************************************************************************
-					********************************************************************************
-					-->
-				<div class="col-lg-2">
-					<div id = "userInfo">
-						<!-- <p>Example Person</p> 
-						<p>example@person.com</p> -->
-						<p><%= current_user.name %></p>
-							<%= gravatar_for @user %>
-						
-						
-						
-					</div>
-					
-					<!-- Toggle switch to display the user's history -->
-					<div id = "showHist">
-						<br>
-						<div id = "histButton">						
-							<div>
-								<input type="checkbox" id="toggleHist" name="toggleHist" class="switch" />
-								<label for="toggleHist">Show event history?</label>
-							</div>
-						</div>
-					</div>
-					
-					<!-- User history pane. Needs to interface with the database to 
-					populate. 
-					********************************************************************************
-					********************************************************************************
-					********************************************************************************
-					-->
-					<div id = "userHist">
-						<% if @user.events.any? %>
-							<ol class = "events">
-								<p><%= render @events %></p>
-							</ol>
-						<% else %>
-							<p id="noHistory">You have no events</p>
-						<% end %>
-						<!--
-						<table>
-							<tr>
-								<td><b>Event Name</b></td>
-								<td><b>Date</b></td>
-							</tr>
-							<tr>
-								<td>Event 1</td>
-								<td>10/31/2014</td>
-							</tr>
-							<tr>
-								<td>Event 2</td>
-								<td>10/31/2014</td>
-							</tr>
-							<tr>
-								<td>Event 3</td>
-								<td>10/31/2014</td>
-							</tr>
-						</table>
-						-->
-					</div>					
-				</div>				
-			</div>
-		</div> 
-
+			<!--Sheet tabs -->
+			
+<div class="row" >
+	<div class="col-lg-2">
+	</div>
+	<div class="col-lg-8 tabLinks">
+		<div class="col-md-4 tabSpace active">
+			<div class = "sheetTabs"><a href="#home">Home</a></div>
+		</div>
+		<div class="col-md-4 tabSpace">
+			<div class = "sheetTabs"><a href="#settings">Settings</a></div>
+		</div>
 		
-		  
+		<div class="col-md-4 tabSpace">
+			<div class = "sheetTabs"><a href="#logout">Log out</a></div>
+		</div>
+	</div>
+	<div class="col-lg-2">
+	</div>
+</div>
+				 
+			<!-- Main content panel. Contains all content for the sheet tabs-->		
+
+<div class="row" id = "jumboT">
+	
+	<div class="col-lg-2">
+	</div>
+	
+	<div class="col-lg-8 mainPanel">	
+		<div class = "mainContent" id = "home">
+			<div class = "row">
+				<div class = "col-md-3 homeDivs" id = "upcoming">
+					
+					<div id="upcomingPane">
+						<h3>Upcoming Events:</h3>
+						<%= render 'events/event_thumbs' %>
+					</div>
+			
+					<div id= "bookingPane">
+						<%= render 'orders/form' %>
+					</div>
+				</div>		
+
+				<div class = "col-md-9 homeDivs" id = "selectedEvent">
+					
+					<h3>Event Details:</h3>
+
+					<div class = "eventDetail" id = "event0">
+						<h4>Please select an event</h4>
+					</div>
+			
+					<%= render 'events/event_detail' %>
+				
+				</div>	
+				
+			</div>
+		</div>
+					
+						
+		<div class = "mainContent" id = "orderComplete">
+			<p id = "completeMessage">Your order has been placed!</p>
+			<p id = "errorMessage">There has been an error!</p>
+			<div id ="goHome"><p><b>Return to Home</b></p></div>
+		</div>
+				
+
+		<div class = "mainContent" id = "settings">
+			<div class = "col-md-11 homeDivs">
+				<div class="gravatar_edit">
+			<%= gravatar_for @user %>
+			<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+					<br> <br>
+			<a href="http://gravatar.com/emails">change</a>
+			</div>
+			</div>
+		</div>
+
+		<div class = "mainContent" id = "logout">
+			<div class = "col-md-11 homeDivs">
+				<p>Are you sure you would like to log out?</p>								
+				<div class = "logButtons" id = "logoutButton"><%= link_to "Log out", logout_path, method: "delete" %></div>								
+			</div>
+		</div>		
+	</div>
+				
+				
+	<div class="col-lg-2">
+		<div id = "userInfo">
+			<p><%= current_user.name %></p>
+			<%= gravatar_for @user %>
+		</div>
+					
+
+		<div id = "showHist">
+			<br>
+			<div id = "histButton">						
+				<div>
+					<input type="checkbox" id="toggleHist" name="toggleHist" class="switch" />
+					<label for="toggleHist">Show event history?</label>
+				</div>
+			</div>
+		</div>
+					
+					
+		<div id = "userHist">
+			<% if @user.events.any? %>
+				<ol class = "events">
+					<p><%= render @events %></p>
+				</ol>
+			<% else %>
+				<p id="noHistory">You have no events</p>
+			<% end %>			
+		</div>	
+	</div>				
+</div>
+		
