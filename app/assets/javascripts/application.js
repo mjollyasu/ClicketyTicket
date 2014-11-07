@@ -27,7 +27,7 @@ $(document).ready(function()
 	$("#toggleHist").click(function(e) 
 	{
 		$("#userHist").toggle();
-		e.stops();
+		e.stop();
 
 	});
 	
@@ -104,6 +104,9 @@ $(document).ready(function()
 	//available and place order in back end
 	$("#orderButton").on("click", function(e)
 	{
+		
+		
+		
 		$("#upcomingPane").show();
 		$("#bookingPane").hide();
 		$(".bookItBtn").show();

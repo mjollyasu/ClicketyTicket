@@ -8,7 +8,6 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
-   
   
   $current_event
   $current_user 
