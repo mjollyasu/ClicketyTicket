@@ -1,0 +1,14 @@
+
+<table>
+	<tr>
+		<td><b>Event Name</b></td>
+		<td><b>Date</b></td>
+	</tr>
+  <% @users.event.each do |event| %>
+    <tr>
+			<td><%= event.title %></td>
+			<td><%= event.when_at %></td>
+		</tr>
+  <% end %>
+    
+</table>
