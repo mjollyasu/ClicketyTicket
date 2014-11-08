@@ -17,6 +17,13 @@ $(document).ready(function()
 	$(".history_item").hide();
 	
 	
+	
+
+
+	
+	
+
+	
     $(".twoBoxes").mouseenter(function()
 	{
 		$(this).fadeTo(500,1);
@@ -29,7 +36,7 @@ $(document).ready(function()
 	{
 		$("#userHist").toggle();
 		$(".history_item").toggle();
-		
+
 		e.stop();
 
 	});
