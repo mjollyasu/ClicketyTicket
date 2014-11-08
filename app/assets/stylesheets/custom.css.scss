@@ -321,6 +321,40 @@ h1
 	font-size:12px;
 }
 
+.gchange
+{
+	width:35%;
+	height:10%;
+	background-color:#051C38;
+	margin-top:25%;
+	padding-top:2%;
+	border-radius:5px;
+	margin-left:30%;
+}
+
+.gchange a
+{
+	padding-left:15%;
+	font-size:20px;
+}
+
+.gchange a:link
+{
+	outline:none; 
+	text-decoration:none;	
+	color:white; 
+}
+
+.gchange a:visited
+{ 
+	outline:none;
+	text-decoration:none; 
+	color:white;
+}
+
+.gchange a:hover { text-decoration:underline; font-weight:normal; }
+
+
 #ticket_number
 {
 	color:black;

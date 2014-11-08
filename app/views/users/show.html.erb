@@ -71,20 +71,15 @@
 		<div class = "mainContent" id = "settings">
 			<div class = "col-md-11 homeDivs">
 				<div class="gravatar_edit">
-			<%= gravatar_for @user %>
-			<br> <br>
+					<%= gravatar_for @user %>
 					<br> <br>
 					<br> <br>
 					<br> <br>
-					<br> <br>
-					<br> <br>
-					<br> <br>
-					<br> <br>
-					<br> <br>
-					<br> <br>
-					<br> <br>
-			<a href="http://gravatar.com/emails">change</a>
-			</div>
+					User avatar handled by Gravatar, the globally recognized avatar management system.
+					<div class="gchange", style="display: block" >
+						<a href="http://gravatar.com/emails">Change Avatar!</a>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -118,7 +113,7 @@
 		<div id = "userHist">
 			<% if @user.events.any? %>
 				<ol>
-					<%= render @events %>
+					<%= render 'events/event' %>
 				</ol>
 			<% else %>
 				<p id="noHistory">You have no events</p>

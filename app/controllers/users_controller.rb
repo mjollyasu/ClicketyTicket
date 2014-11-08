@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
  
+  #skip_before_filter :require_login, :except=>[:new,:create]
+  skip_before_filter :require_login, :only=>[:show]
+  
   #helper_method :current_event
   
   # $current_event
@@ -7,7 +10,12 @@ class UsersController < ApplicationController
     
   def show
     
-    @user = User.find(params[:id])
+    if ! $current_user.nil? && $current_user.id != params[:id]
+      @user = User.find($current_user.id)
+    else
+      @user = User.find(params[:id])
+    end
+  
     #@events = @user.events
 
     #@events = Event.all
@@ -16,7 +24,15 @@ class UsersController < ApplicationController
     
     @order = Order.new
     
-    @orders = Order.where('user_id >= (?)', @user.id ).all
+    @orders = Order.where( 'orders.user_id == (?)', @user.id ).joins(:event).order('events.when_at').all
+    
+    
+    #ScheduledCourse.joins(:course).order('courses.name')
+    #@userevents = Event.orders.where( 'user_id == (?)', @user.id ).all
+      
+    #else
+      #redirect_to root_url
+    #end
     
   end
  
@@ -30,6 +46,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     # @order = Order.new
+    $current_user = @user
   end
   
   def create
