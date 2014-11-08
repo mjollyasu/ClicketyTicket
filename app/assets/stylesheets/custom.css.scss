@@ -217,7 +217,7 @@ h1
 		overflow-y: scroll;
 }
 
-#userHist td
+#userHist p
 {
 	color:black;
 	padding-left: 10px;
@@ -319,6 +319,11 @@ h1
 {
 	padding-left:20%;
 	font-size:12px;
+}
+
+#ticket_number
+{
+	color:black;
 }
 
 /*Order completion pane styling elements*/
@@ -532,4 +537,16 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.field
+{
+	color: black;
+	
+}
+
+#conf_button
+{
+	color:black;
+	
 }
