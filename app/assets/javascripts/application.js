@@ -14,7 +14,15 @@ $(document).ready(function()
 	$("#orderError").hide();
 	$("#errorMessage").hide();
 	$("#completeMessage").hide();
+	$(".history_item").hide();
 	
+	
+	
+
+
+	
+	
+
 	
     $(".twoBoxes").mouseenter(function()
 	{
@@ -27,6 +35,8 @@ $(document).ready(function()
 	$("#toggleHist").click(function(e) 
 	{
 		$("#userHist").toggle();
+		$(".history_item").toggle();
+
 		e.stop();
 
 	});

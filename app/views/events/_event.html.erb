@@ -1,6 +1,12 @@
-<li id="event-<%=event.id %>">
-  
-  <span class="title"><%= event.title %></span>
-  <span class="when_at"><%= event.when_at %></span>
-  
-</li>
+<% if ! @orders.nil? %>
+  <% @orders.each do |order| %>
+    <% if order.user_id == current_user.id %>
+      <li>
+        <div class = "history_item-">
+          <div class="title"><p><%= Event.find(order.event_id).title %></p></div>
+          <div class="when_at"><p><%= Event.find(order.event_id).when_at %></p></div>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
