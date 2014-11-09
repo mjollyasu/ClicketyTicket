@@ -20,6 +20,16 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
+
+
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: ticket_database
+  pool: 5
+  timeout: 5000
+
+
