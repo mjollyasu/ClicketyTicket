@@ -31,8 +31,7 @@ class OrdersController < ApplicationController
     @order.event_id = $current_event.id
     
     respond_to do |format|
-      if @order.tickets_purchased <= $current_event.available_tickets
-        
+      if @order.tickets_purchased <= $current_event.available_tickets &&  @order.tickets_purchased >= 1
         $current_event.available_tickets -= @order.tickets_purchased
         
         if @order.save && $current_event.save
