@@ -32,8 +32,9 @@ class OrdersController < ApplicationController
     @order.user_id = $current_user.id
     #@order.user_id = session[:user_id]
     
-    #$current_event = $current_user.events.find_by(id: users[:event_id])
     if ! $current_event.nil?
+      
+      #$current_event = $current_user.events.find_by(id: users[:event_id])
       @order.event_id = $current_event.id
       
       respond_to do |format|

@@ -44,7 +44,11 @@ class UsersController < ApplicationController
     #puts params[:event_id]
     #puts params[:id]
     $current_event = Event.find_by(id: params[:event_id]) 
-    head :ok, content_type: "text/html"
+    
+    if $current_event.nil?
+      flash[:notice] = "NIL"
+    end
+    #head :ok, content_type: "text/html"
   end
   
   def new
