@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     
     @order = Order.new
     
-    @orders = Order.where( 'orders.user_id == (?)', @user.id ).joins(:event).order('events.when_at').all
+    @orders = Order.where( 'orders.user_id = (?)', @user.id ).joins(:event).order('events.when_at').all
     
     
     #ScheduledCourse.joins(:course).order('courses.name')
