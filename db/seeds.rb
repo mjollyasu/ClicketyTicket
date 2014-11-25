@@ -22,8 +22,8 @@ users = User.order(:created_at).take(1)
   event_thumb = n
   venue = "Location "+ (n+1).to_s
   when_at = n.days.from_now
-  total_tickets = (n+1)*5
-  available_tickets = n*2
+  total_tickets = (n+1)*50
+  available_tickets = (n+1)*50
   users.each { |user| user.events.create!(title: title, event_thumb: event_thumb,
     venue: venue, when_at: when_at, total_tickets: total_tickets, 
     available_tickets: available_tickets) }
