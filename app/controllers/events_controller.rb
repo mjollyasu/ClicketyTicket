@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   def current
     #puts params.include?(:id)
     
-    @current_event = Event.find(params[:id])
+    $current_event = Event.find(params[:id])
     # if ! @current_event.nil?
     # flash[:success] = "Event created"
     # flash[:notice] = "WHAT"
@@ -34,7 +34,8 @@ class EventsController < ApplicationController
   end
   
   def create
-    @event = $current_user.events.build(event_params)
+    #@event = $current_user.events.build(event_params)
+    @event = Events.build(event_params)
     
     respond_to do |format|
       if @event.save
