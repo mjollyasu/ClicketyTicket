@@ -44,10 +44,10 @@ class UsersController < ApplicationController
     #puts params[:event_id]
     #puts params[:id]
     $current_event = Event.find_by(id: params[:event_id]) 
-    
-    alert($current_event.id)
-    
     head :ok, content_type: "text/html"
+    
+    flash.now[:error] = $current_event.id
+    
   end
   
   def new
