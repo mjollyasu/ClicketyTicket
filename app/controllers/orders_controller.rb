@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
 
   # GET /orders
   # GET /orders.json
-  def index
-    @orders = Order.all
-  end
+  #def index
+  #  @orders = Order.all
+  #end
 
   # GET /orders/1
   # GET /orders/1.json
@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
           format.json { render :show, status: :created, location: $current_user }
         else
           format.html { redirect_to $current_user, notice: 'Unable to process order.' } #"/users/#{$current_user.id}" }
-          format.json { render :show, status: :created, location: $current_user }
+          format.json { render :show, status: :unprocessable_entity, location: $current_user }
           #format.json { render json: @order.errors, status: :unprocessable_entity }
         end
       else

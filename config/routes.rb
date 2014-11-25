@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
   
   #resources :users
-  resources :orders
+  resources :orders, only: [:create, :destroy]
   resources :events, only: [:create, :destroy]
 
   
