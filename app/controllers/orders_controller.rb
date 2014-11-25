@@ -40,7 +40,8 @@ class OrdersController < ApplicationController
           format.json { render :show, status: :created, location: $current_user }
         else
           format.html { redirect_to $current_user, notice: 'Unable to process order.' } #"/users/#{$current_user.id}" }
-          format.json { render json: @order.errors, status: :unprocessable_entity }
+          format.json { render :show, status: :created, location: $current_user }
+          #format.json { render json: @order.errors, status: :unprocessable_entity }
         end
       else
         #flash.now[:danger] = "Unable to process order - ordering more tickets than available"
