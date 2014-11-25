@@ -55,7 +55,12 @@ class OrdersController < ApplicationController
           format.json { render json: @order.errors, status: :unprocessable_entity }
         end
       end
+      
+    else
+      format.html { redirect_to $current_user, notice: 'Unable to process order.' }
+      format.json { render :show, status: :unprocessable_entity, location: $current_user }
     end
+    
   end
 
   # PATCH/PUT /orders/1
