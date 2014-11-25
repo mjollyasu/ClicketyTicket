@@ -20,7 +20,7 @@ gem 'rails-html-sanitizer',    '1.0.1'
 gem 'sdoc',                    '0.4.0', group: :doc
 gem 'simplecov', :require => false, :group => :test
 gem 'rspec-rails'
-gem "chromedriver-helper"
+gem 'chromedriver-helper'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
@@ -28,7 +28,7 @@ group :development, :test do
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
   gem 'rspec-rails'
-  gem "chromedriver-helper"
+  gem 'chromedriver-helper'
 end
 
 group :test do
@@ -40,7 +40,7 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem "chromedriver-helper"
+  gem 'chromedriver-helper'
   
 end
 

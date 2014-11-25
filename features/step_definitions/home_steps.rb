@@ -40,12 +40,17 @@ Then(/^the Sign in page is loaded$/) do
 end
 
 Then(/^the user dashboard is loaded$/) do
-    visit "/users/16" 
+    visit "/users/1" 
     expect(page).to have_content("Event Details")
 end
 
 When(/^I press "(.*?)"$/) do |button|
     click_button(button)
+end
+
+Then(/^I press book it$/) do 
+    #expect(page).to have_content("Book it!")
+    find("event2").click
 end
 
 Given(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
