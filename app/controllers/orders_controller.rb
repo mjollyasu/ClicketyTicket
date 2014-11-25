@@ -27,7 +27,8 @@ class OrdersController < ApplicationController
   def create
     
     @order = Order.new(order_params)
-    @order.user_id = $current_user.id
+    #@order.user_id = $current_user.id
+    @order.user_id = session[:user_id]
     @order.event_id = $current_event.id
     
     respond_to do |format|
