@@ -32,12 +32,14 @@ class OrdersController < ApplicationController
     @order.user_id = $current_user.id
     #@order.user_id = session[:user_id]
     
-    if ! $current_event.nil?
+    #$current_event = Event.find_by(id: users[:event_id])
       
-      #$current_event = $current_user.events.find_by(id: users[:event_id])
-      @order.event_id = $current_event.id
+    respond_to do |format|
       
-      respond_to do |format|
+      if ! $current_event.nil?
+        
+        @order.event_id = $current_event.id
+      
         if @order.tickets_purchased <= $current_event.available_tickets &&  @order.tickets_purchased >= 1
           $current_event.available_tickets -= @order.tickets_purchased
           
@@ -55,16 +57,15 @@ class OrdersController < ApplicationController
           format.html { redirect_to $current_user, notice: 'Unable to process order - ordering more tickets than available.' }
           format.json { render json: @order.errors, status: :unprocessable_entity }
         end
+      
+      else
+      
+        format.html { redirect_to $current_user }#, notice: 'Unknown error.' }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+        #format.html { redirect_to $current_user, notice: 'Unable to process order.' }
+        #format.json { render :show, status: :unprocessable_entity, location: $current_user }
       end
-      
-    else
-      
-      format.html { redirect_to $current_user }#, notice: 'Unknown error.' }
-      format.json { render json: @order.errors, status: :unprocessable_entity }
-      #format.html { redirect_to $current_user, notice: 'Unable to process order.' }
-      #format.json { render :show, status: :unprocessable_entity, location: $current_user }
     end
-    
   end
 
   # PATCH/PUT /orders/1
