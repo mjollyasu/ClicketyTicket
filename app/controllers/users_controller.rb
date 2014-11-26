@@ -46,8 +46,6 @@ class UsersController < ApplicationController
     $current_event = Event.find_by(id: params[:event_id]) 
     head :ok, content_type: "text/html"
     
-    flash.now[:error] = $current_event.id
-    
   end
   
   def new

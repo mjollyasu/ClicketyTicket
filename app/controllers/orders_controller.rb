@@ -58,8 +58,10 @@ class OrdersController < ApplicationController
       end
       
     else
-      format.html { redirect_to $current_user, notice: 'Unable to process order.' }
-      format.json { render :show, status: :unprocessable_entity, location: $current_user }
+      
+      head :ok, content_type: "text/html"
+      #format.html { redirect_to $current_user, notice: 'Unable to process order.' }
+      #format.json { render :show, status: :unprocessable_entity, location: $current_user }
     end
     
   end

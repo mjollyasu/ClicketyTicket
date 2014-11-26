@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   def current
     #puts params.include?(:id)
     
-    $current_event = Event.find(params[:id])
+    #$current_event = Event.find(params[:id]) # SMB
     # if ! @current_event.nil?
     # flash[:success] = "Event created"
     # flash[:notice] = "WHAT"
