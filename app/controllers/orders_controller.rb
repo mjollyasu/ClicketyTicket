@@ -3,9 +3,9 @@ class OrdersController < ApplicationController
 
   # GET /orders
   # GET /orders.json
-  def index
-    @orders = Order.all
-  end
+  #def index
+  #  @orders = Order.all
+  #end
 
   # GET /orders/1
   # GET /orders/1.json
@@ -27,25 +27,43 @@ class OrdersController < ApplicationController
   def create
     
     @order = Order.new(order_params)
-    @order.user_id = $current_user.id
-    @order.event_id = $current_event.id
     
+    $current_user ||= User.find_by(id: session[:user_id])
+    @order.user_id = $current_user.id
+    #@order.user_id = session[:user_id]
+    
+    #$current_event = Event.find_by(id: users[:event_id])
+      
     respond_to do |format|
-      if @order.tickets_purchased <= $current_event.available_tickets &&  @order.tickets_purchased >= 1
-        $current_event.available_tickets -= @order.tickets_purchased
+      
+      if ! $current_event.nil?
         
-        if @order.save && $current_event.save
-          #format.html { render "/users/#{$current_user.id}", notice: 'Order was successfully created.' }
-          format.html { redirect_to $current_user, notice: 'Order was successfully created.' }
-          format.json { render :show, status: :created, location: $current_user }
+        @order.event_id = $current_event.id
+      
+        if @order.tickets_purchased <= $current_event.available_tickets &&  @order.tickets_purchased >= 1
+          $current_event.available_tickets -= @order.tickets_purchased
+          
+          if @order.save && $current_event.save
+            #format.html { render "/users/#{$current_user.id}", notice: 'Order was successfully created.' }
+            format.html { redirect_to $current_user, notice: 'Order was successfully created.' }
+            format.json { render :show, status: :created, location: $current_user }
+          else
+            format.html { redirect_to $current_user, notice: 'Unable to process order.' } #"/users/#{$current_user.id}" }
+            format.json { render :show, status: :unprocessable_entity, location: $current_user }
+            #format.json { render json: @order.errors, status: :unprocessable_entity }
+          end
         else
-          format.html { redirect_to $current_user, notice: 'Unable to process order.' } #"/users/#{$current_user.id}" }
+          #flash.now[:danger] = "Unable to process order - ordering more tickets than available"
+          format.html { redirect_to $current_user, notice: 'Unable to process order - ordering more tickets than available.' }
           format.json { render json: @order.errors, status: :unprocessable_entity }
         end
+      
       else
-        #flash.now[:danger] = "Unable to process order - ordering more tickets than available"
-        format.html { redirect_to $current_user, notice: 'Unable to process order - ordering more tickets than available.' }
+      
+        format.html { redirect_to $current_user, notice: 'Unknown error.' }
         format.json { render json: @order.errors, status: :unprocessable_entity }
+        #format.html { redirect_to $current_user, notice: 'Unable to process order.' }
+        #format.json { render :show, status: :unprocessable_entity, location: $current_user }
       end
     end
   end

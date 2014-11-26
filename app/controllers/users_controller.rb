@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   # $current_user
     
     
-    def show
+  def show
+    
     $current_user = @user
     if ! $current_user.nil? && $current_user.id != params[:id]
       @user = User.find($current_user.id) #$current_user.id
@@ -18,8 +19,6 @@ class UsersController < ApplicationController
     end
 
     
- 
-  
     #@events = @user.events
 
     #@events = Event.all
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
     
     @order = Order.new
     
-    @orders = Order.where( 'orders.user_id == (?)', @user.id ).joins(:event).order('events.when_at').all
+    @orders = Order.where( 'orders.user_id = (?)', @user.id ).joins(:event).order('events.when_at').all
     
     
     #ScheduledCourse.joins(:course).order('courses.name')
@@ -44,7 +43,11 @@ class UsersController < ApplicationController
     #puts params[:event_id]
     #puts params[:id]
     $current_event = Event.find_by(id: params[:event_id]) 
+    
+    #raise TypeError, $current_event.id
+    
     head :ok, content_type: "text/html"
+    
   end
   
   def new
