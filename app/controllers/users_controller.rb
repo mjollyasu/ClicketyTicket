@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   # $current_user
     
     
-    def show
+  def show
+    
     $current_user = @user
     if ! $current_user.nil? && $current_user.id != params[:id]
       @user = User.find($current_user.id) #$current_user.id
@@ -18,8 +19,6 @@ class UsersController < ApplicationController
     end
 
     
- 
-  
     #@events = @user.events
 
     #@events = Event.all
