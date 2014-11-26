@@ -59,7 +59,8 @@ class OrdersController < ApplicationController
       
     else
       
-      head :ok, content_type: "text/html"
+      format.html { redirect_to $current_user, notice: 'Unknown error.' }
+      format.json { render json: @order.errors, status: :unprocessable_entity }
       #format.html { redirect_to $current_user, notice: 'Unable to process order.' }
       #format.json { render :show, status: :unprocessable_entity, location: $current_user }
     end
