@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     #puts params[:id]
     $current_event = Event.find_by(id: params[:event_id]) 
     
-    raise TypeError, $current_event.id
+    #raise TypeError, $current_event.id
     
     head :ok, content_type: "text/html"
     
